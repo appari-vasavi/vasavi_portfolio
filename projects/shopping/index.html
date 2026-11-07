@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Store | Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2>Style Store</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <h3>Cart: <span id="cart-count">0</span></h3>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Find Your Perfect Style</h1>
+        <p>Discover the latest fashion collections.</p>
+        <a href="#products">Shop Now</a>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Shoes">
+                <h3>Sports Shoes</h3>
+                <p>Comfortable everyday shoes.</p>
+                <h4>₹1,499</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="T-shirt">
+                <h3>Classic T-Shirt</h3>
+                <p>Simple and stylish cotton T-shirt.</p>
+                <h4>₹599</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600" alt="Handbag">
+                <h3>Fashion Handbag</h3>
+                <p>Elegant handbag for everyday use.</p>
+                <h4>₹999</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: stylestore@example.com</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Style Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

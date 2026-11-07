@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Vasavi, an aspiring web developer. Explore skills, projects and contact details.">
+    <title>Vasavi | Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">Vasavi<span>.</span></a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Open navigation" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="theme-toggle" class="theme-toggle"
+                    aria-label="Switch color theme">☀</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home -->
+        <section id="home" class="hero section">
+            <div class="hero-content">
+                <p class="intro-label">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm <span>Vasavi</span></h1>
+
+                <h2>I'm an <span id="typing-text">Aspiring Web Developer</span></h2>
+
+                <p class="hero-description">
+                    A Computer Science and Design graduate who enjoys
+                    creating attractive, responsive and user-friendly
+                    websites. I love learning new technologies and
+                    turning ideas into useful web experiences.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">Explore My Work</a>
+                    <a href="assets/Vasavi_Resume.pdf" class="btn outline-btn"
+                       download>Download Resume ↓</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/appari-vasavi"
+                       target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                    <a href="https://www.linkedin.com/in/vasavi appari"
+                       target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+                    <a href="mailto:vasaviappari@gmail.com">Email</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-glow"></div>
+                <img src="./assets/images.jpeg" alt="Profile photo of Vasavi">
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="section-heading">
+                <p class="section-label">GET TO KNOW ME</p>
+                <h2>About <span>Me</span></h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I am a Computer Science and Design graduate from
+                        St. Peter's Engineering College. I am interested
+                        in web development and software development.
+                    </p>
+                    <p>
+                        I enjoy working in teams, learning new skills
+                        and adapting to new situations. My goal is to
+                        build useful applications and grow as a developer.
+                    </p>
+                </div>
+
+                <div class="about-details">
+                    <div class="detail-item">
+                        <span>Education</span>
+                        <strong>Computer Science and Design</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>College</span>
+                        <strong>St. Peter's Engineering College</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Career Interest</span>
+                        <strong>Web Development</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Strength</span>
+                        <strong>Adaptability and Teamwork</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <div class="section-heading">
+                <p class="section-label">MY TECHNICAL KNOWLEDGE</p>
+                <h2>My <span>Skills</span></h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Web page structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Styling and responsive design</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web pages</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">☕</div>
+                    <h3>Java</h3>
+                    <p>Programming fundamentals</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Database queries</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>VS Code</h3>
+                    <p>Development environment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="section-heading">
+                <p class="section-label">SOME THINGS I HAVE BUILT</p>
+                <h2>My <span>Projects</span></h2>
+            </div>
+
+            <div class="projects-container">
+
+                <article class="project-card">
+                    <div class="project-image portfolio-preview">
+                        <span>MY PORTFOLIO</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Personal Portfolio</h3>
+                        <p>
+                            A personal website showcasing my introduction,
+                            technical skills, projects and contact details.
+                        </p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <a href="#home" class="project-link">View Portfolio ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image restaurant-preview">
+                        <span>TASTY BITES</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tasty Bites – Restaurant</h3>
+                        <p>
+                            A responsive restaurant website featuring
+                            food menus and cart counter functionality.
+                        </p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <a href="projects/restaurant/index.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">View Project ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image shopping-preview">
+                        <span>STYLE STORE</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Style Store – Shopping</h3>
+                        <p>
+                            An online shopping website with product
+                            cards and basic cart functionality.
+                        </p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <a href="projects/shopping/index.html"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">View Project ↗</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="section-heading">
+                <p class="section-label">LET'S CONNECT</p>
+                <h2>Contact <span>Me</span></h2>
+                <p>Have a project or opportunity? Send me a message.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>
+                        I am interested in learning, collaborating
+                        and exploring entry-level opportunities.
+                    </p>
+                    <p>✉ vasaviappar@gmail.com</p>
+                    <p>📍 Hyderabad, India</p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="visitor-name"
+                           placeholder="Your name" required>
+
+                    <input type="email" id="visitor-email"
+                           placeholder="Your email address" required>
+
+                    <textarea id="visitor-message" rows="5"
+                              placeholder="Your message" required></textarea>
+
+                    <button type="submit" class="btn primary-btn">
+                        Send Message →
+                    </button>
+
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed and developed by <span>Vasavi</span></p>
+        <p>© <span id="year"></span> All rights reserved.</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
