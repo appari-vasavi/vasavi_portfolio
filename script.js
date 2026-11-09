@@ -138,6 +138,7 @@ document.getElementById("year").textContent =
     new Date().getFullYear();
 
 
+
 // ---------- Contact form with success message ----------
 
 const contactForm = document.getElementById("contact-form");
@@ -147,26 +148,32 @@ contactForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    formStatus.textContent = "Sending your message...";
+    const submitButton = contactForm.querySelector(
+        'button[type="submit"]'
+    );
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    formStatus.textContent = "Please wait...";
     formStatus.style.color = "blue";
 
-    const formData = new FormData(contactForm);
-
-    const data = Object.fromEntries(formData.entries());
-
     try {
+
         const response = await fetch(contactForm.action, {
             method: "POST",
+            body: new FormData(contactForm),
             headers: {
-                "Content-Type": "application/json",
                 "Accept": "application/json"
-            },
-            body: JSON.stringify(data)
+            }
         });
 
         const result = await response.json();
 
-        if (response.ok && String(result.success) === "true") {
+        console.log("FormSubmit response:", result);
+
+        if (response.ok &&
+            (result.success === "true" || result.success === true)) {
 
             formStatus.textContent =
                 "Thank you! Your message has been sent successfully.";
@@ -178,18 +185,23 @@ contactForm.addEventListener("submit", async function (event) {
         } else {
 
             formStatus.textContent =
-                "Sorry! Your message could not be sent. Please try again.";
+                result.message || "Message could not be sent. Please try again.";
 
             formStatus.style.color = "red";
         }
 
     } catch (error) {
 
+        console.error("Contact form error:", error);
+
         formStatus.textContent =
-            "Something went wrong. Please try again later.";
+            "Unable to send your message. Please check your connection.";
 
         formStatus.style.color = "red";
 
-        console.error("Contact form error:", error);
+    } finally {
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message →";
     }
 });
