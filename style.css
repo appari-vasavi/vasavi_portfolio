@@ -600,3 +600,12 @@ button, input, textarea {
         transform: none;
     }
 }
+
+/* Contact form status message */
+
+.form-status {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}

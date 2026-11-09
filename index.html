@@ -56,10 +56,24 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn primary-btn">Explore My Work</a>
-                    <a href="assets/Vasavi_Resume.pdf" class="btn outline-btn"
-                       download>Download Resume ↓</a>
-                </div>
+
+    <a href="#projects" class="btn primary-btn">
+        Explore My Work
+    </a>
+
+    <a href="./assets/vasavi_resume.pdf"
+   class="btn outline-btn"
+   target="_blank">
+    View Resume
+</a>
+
+<a href="./assets/vasavi_resume.pdf"
+   class="btn primary-btn"
+   download="vasavi_resume.pdf">
+    Download Resume ↓
+</a>
+
+</div>
 
                 <div class="social-links">
                     <a href="https://github.com/appari-vasavi"
@@ -252,26 +266,43 @@
                         I am interested in learning, collaborating
                         and exploring entry-level opportunities.
                     </p>
-                    <p>✉ vasaviappar@gmail.com</p>
+                    <p>✉ vasaviappari@gmail.com</p>
                     <p>📍 Hyderabad, India</p>
                 </div>
 
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="visitor-name"
-                           placeholder="Your name" required>
+                
+<form action="https://formsubmit.co/ajax/vasaviappari@gmail.com"
+      method="POST"
+      class="contact-form"
+      id="contact-form">
 
-                    <input type="email" id="visitor-email"
-                           placeholder="Your email address" required>
+    <input type="hidden" name="_subject"
+           value="New message from my portfolio">
 
-                    <textarea id="visitor-message" rows="5"
-                              placeholder="Your message" required></textarea>
+    <input type="text"
+           name="name"
+           placeholder="Your name"
+           required>
 
-                    <button type="submit" class="btn primary-btn">
-                        Send Message →
-                    </button>
+    <input type="email"
+           name="email"
+           placeholder="Your email address"
+           required>
 
-                    <p id="form-status" class="form-status" aria-live="polite"></p>
-                </form>
+    <textarea name="message"
+              rows="5"
+              placeholder="Your message"
+              required></textarea>
+
+    <button type="submit" class="btn primary-btn">
+        Send Message →
+    </button>
+
+    <p id="form-status"
+       class="form-status"
+       aria-live="polite"></p>
+</form>
+
             </div>
         </section>
 

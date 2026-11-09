@@ -138,41 +138,58 @@ document.getElementById("year").textContent =
     new Date().getFullYear();
 
 
-// ---------- Contact form ----------
+// ---------- Contact form with success message ----------
 
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
-// Replace this with your actual email address.
-const myEmail = "vasaviappar@gmail.com";
+contactForm.addEventListener("submit", async function (event) {
 
-contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const name = document.getElementById("visitor-name").value.trim();
-    const email = document.getElementById("visitor-email").value.trim();
-    const message = document.getElementById("visitor-message").value.trim();
+    formStatus.textContent = "Sending your message...";
+    formStatus.style.color = "blue";
 
-    if (!name || !email || !message) {
-        formStatus.textContent = "Please fill in all the fields.";
-        return;
+    const formData = new FormData(contactForm);
+
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && String(result.success) === "true") {
+
+            formStatus.textContent =
+                "Thank you! Your message has been sent successfully.";
+
+            formStatus.style.color = "green";
+
+            contactForm.reset();
+
+        } else {
+
+            formStatus.textContent =
+                "Sorry! Your message could not be sent. Please try again.";
+
+            formStatus.style.color = "red";
+        }
+
+    } catch (error) {
+
+        formStatus.textContent =
+            "Something went wrong. Please try again later.";
+
+        formStatus.style.color = "red";
+
+        console.error("Contact form error:", error);
     }
-
-    const subject = encodeURIComponent("Portfolio enquiry from " + name);
-
-    const body = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\n\nMessage:\n" + message
-    );
-
-    const mailLink =
-        "mailto:" + myEmail +
-        "?subject=" + subject +
-        "&body=" + body;
-
-    formStatus.textContent =
-        "Opening your email application. Please send the prepared message.";
-
-    window.location.href = mailLink;
 });
