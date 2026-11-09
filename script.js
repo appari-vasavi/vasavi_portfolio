@@ -139,6 +139,7 @@ document.getElementById("year").textContent =
 
 
 
+
 // ---------- Contact form with success message ----------
 
 const contactForm = document.getElementById("contact-form");
@@ -155,25 +156,31 @@ contactForm.addEventListener("submit", async function (event) {
     submitButton.disabled = true;
     submitButton.textContent = "Sending...";
 
-    formStatus.textContent = "Please wait...";
+    formStatus.textContent = "Sending your message...";
     formStatus.style.color = "blue";
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
 
     try {
 
-        const response = await fetch(contactForm.action, {
-            method: "POST",
-            body: new FormData(contactForm),
-            headers: {
-                "Accept": "application/json"
+        const response = await fetch(
+            "https://formsubmit.co/ajax/vasaviappari@gmail.com",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(data)
             }
-        });
+        );
 
         const result = await response.json();
 
         console.log("FormSubmit response:", result);
 
-        if (response.ok &&
-            (result.success === "true" || result.success === true)) {
+        if (String(result.success) === "true") {
 
             formStatus.textContent =
                 "Thank you! Your message has been sent successfully.";
@@ -195,7 +202,7 @@ contactForm.addEventListener("submit", async function (event) {
         console.error("Contact form error:", error);
 
         formStatus.textContent =
-            "Unable to send your message. Please check your connection.";
+            "Unable to send your message. Please try again.";
 
         formStatus.style.color = "red";
 
